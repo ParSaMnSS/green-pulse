@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
+import Hero from "@/components/HeroSlider";
 import SolutionFeatures from "@/components/Solutions/SolutionFeatures";
 import Footer from "@/components/Footer";
 import Section from "@/components/VFX/Section";
