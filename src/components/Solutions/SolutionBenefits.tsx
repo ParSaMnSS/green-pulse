@@ -1,4 +1,6 @@
-import FeatureCard from "./BenefitsCard";
+"use client";
+import { motion } from "framer-motion";
+import BenefitsCard from "./BenefitsCard";
 
 const features = [
   {
@@ -32,23 +34,32 @@ const features = [
     desc: "Stored energy ensures uptime during grid outages or fluctuations, enhancing service continuity and user trust.",
   },
 ];
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } },
+};
 
 export default function SolutionBenefits() {
   return (
-    <section
-      id="benefits"
-      className="bg-[#071733] py-16 md:pt-24 md:pb-40"
-    >
+    <section id="benefits" className="bg-[#071733] py-16 md:pt-24 md:pb-40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center">
           Solution Benefits
         </h2>
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7 items-stretch">
+
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
+          className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7 items-stretch"
+        >
           {features.map((f, i) => (
-            <FeatureCard key={i} {...f} />
+            <BenefitsCard key={i} {...f} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
+
