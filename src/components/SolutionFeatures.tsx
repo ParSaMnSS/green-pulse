@@ -1,4 +1,5 @@
 import FeatureCard from "./FeatureCard";
+import Reveal from "./VFX/Reveal";
 
 const features = [
   {
@@ -43,7 +44,9 @@ export default function SolutionFeatures() {
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
           {features.map((f, i) => (
-            <FeatureCard key={i} {...f} />
+            <Reveal key={i} delay={i * 0.05}>
+              <FeatureCard {...f} />
+            </Reveal>
           ))}
         </div>
       </div>
