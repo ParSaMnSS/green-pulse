@@ -28,10 +28,13 @@ export default function Navbar() {
             <Image
               src="/asset/gp.png"
               alt="Logo"
-              width={200}
+              width={300}           // give the larger intrinsic size
               height={300}
               priority
-              className={scrolled ? "" : "invert brightness-0 sm:w-[200px] md:w-[300px]"}
+              className={[
+                "w-[200px] md:w-[300px] h-auto shrink-0 transition-[filter] duration-300",
+                scrolled ? "" : "invert brightness-0",
+              ].join(" ")}
             />
           </Link>
 
