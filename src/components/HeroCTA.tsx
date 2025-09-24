@@ -38,15 +38,6 @@ export default function HeroCTA({
                 <Arrow />
               </Link>
             )}
-            {secondary && (
-              <Link
-                href={secondary.href}
-                className="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow hover:bg-indigo-700 transition"
-              >
-                {secondary.label}
-                <Arrow />
-              </Link>
-            )}
           </div>
         </div>
       </div>

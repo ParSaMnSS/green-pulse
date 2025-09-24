@@ -1,35 +1,29 @@
-// src/components/HeroSlider.tsx
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 type Slide = {
   img: string;
   title: string;
   subtitle?: string;
-  cta?: { label: string; href: string };
 };
 
 const slides: Slide[] = [
   {
-    img: "/asset/road.png",
-    title: "High charging power\nwithout grid limits",
-    subtitle: "Contact our sales team to learn which solution fits you best.",
-    cta: { label: "Get in touch", href: "#contact" },
+    img: "/asset/compact.png",
+    title: "Compact Solution",
+    subtitle: "Ideal for commercial sites, dealerships, and urban infill locations, our compact ESS stations offer scalable energy storage and fast DC charging in a modular footprint—balancing performance, cost, and deployment speed.",
   },
   {
-    img: "/asset/road.png",
-    title: "Powering the Grid\nProfiting Your Business",
-    subtitle: "Ship a static Next.js site anywhere with one command.",
-    cta: { label: "Docs", href: "#docs" },
+    img: "/asset/portable.png",
+    title: "Portable Solution",
+    subtitle: "Built for mobile fleets, events, and remote areas, our portable ESS chargers provide flexible, off-grid DC-to-DC power wherever it’s needed—no grid connection required, just plug and charge.",
   },
   {
-    img: "/asset/road.png",
-    title: "Independent Power\nOff-grid Charging",
-    subtitle: "A clean component system ready for growth.",
-    cta: { label: "Sign up", href: "#signup" },
+    img: "/asset/large.png",
+    title: "High Scale Solution",
+    subtitle: "Designed for high-traffic urban zones and highway corridors, our large-scale ESS charging hubs deliver ultra-fast DC-to-DC charging with multi-megawatt storage, enabling grid-independent operation and peak-shaving for maximum efficiency and uptime.",
   },
 ];
 
@@ -63,7 +57,6 @@ export default function HeroSlider() {
     }
   };
 
-
   return (
     <section
       id="hero"
@@ -95,26 +88,21 @@ export default function HeroSlider() {
               />
               <div className="absolute inset-0 -z-10 bg-black/50" />
               {/* Centered content */}
-              <div className="relative h-full flex items-center justify-center">
-                <div className="mx-auto w-full max-w-6xl px-4 text-center pb-28">
-                  <h1 className="whitespace-pre-line text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
-                    {s.title}
-                  </h1>
-                  {s.subtitle && (
-                    <p className="mt-4 text-base sm:text-lg md:text-xl text-white/85 max-w-3xl mx-auto">
-                      {s.subtitle}
-                    </p>
-                  )}
-                  {s.cta && (
-                    <Link
-                      href={s.cta.href}
-                      className="mt-8 inline-block rounded-lg bg-purple-600 px-6 py-3 font-semibold shadow-lg transition-colors hover:bg-purple-700"
-                    >
-                      {s.cta.label}
-                    </Link>
-                  )}
+              <div className="relative h-full flex items-center justify-end back">
+                <div className="mx-auto w-full max-w-6xl px-4 text-left pb-28">
+                  <div className="max-w-3xl backdrop-blur-sm px-10 py-6 rounded-2xl shadow-2xl"> {/* common wrapper for alignment */}
+                    <h1 className="whitespace-pre-line text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
+                      {s.title}
+                    </h1>
+                    {s.subtitle && (
+                      <p className="mt-4 text-base sm:text-lg md:text-xl text-white/85">
+                        {s.subtitle}
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
+
             </div>
           );
         })}
