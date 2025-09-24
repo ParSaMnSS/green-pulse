@@ -1,5 +1,5 @@
 import FeatureCard from "./FeatureCard";
-import Reveal from "./VFX/Reveal";
+import Reveal from "../VFX/Reveal";
 
 const features = [
   {
@@ -36,17 +36,14 @@ const features = [
 
 export default function SolutionFeatures() {
   return (
-    <section id="features" className="bg-[#071733] py-16 md:py-24">
+    <section id="features" className="bg-[#071733] py-16 md:pt-24 md:pb-40 ">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center">
           Solution Features
         </h2>
-
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7 items-stretch">
           {features.map((f, i) => (
-            <Reveal key={i} delay={i * 0.05}>
-              <FeatureCard {...f} />
-            </Reveal>
+            <FeatureCard key={i} {...f} />
           ))}
         </div>
       </div>
