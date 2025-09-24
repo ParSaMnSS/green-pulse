@@ -21,17 +21,17 @@ export default function Navbar() {
         scrolled ? "bg-white/95 shadow-sm backdrop-blur" : "bg-transparent",
       ].join(" ")}
     >
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 md:py-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/next.svg"
+              src="/asset/gp.png"
               alt="Logo"
-              width={132}
-              height={132}
+              width={200}
+              height={300}
               priority
-              className={scrolled ? "" : "invert brightness-0"}
+              className={scrolled ? "" : "invert brightness-0 sm:w-[200px] md:w-[300px]"}
             />
           </Link>
 
