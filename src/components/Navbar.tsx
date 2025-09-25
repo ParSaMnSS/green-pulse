@@ -24,23 +24,27 @@ export default function Navbar() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 md:py-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link
+            href="/"
+            className="flex items-center space-x-2 sm:ml-0 -ml-2" 
+          >
             <Image
               src="/asset/gp.png"
               alt="Logo"
-              width={300}           // give the larger intrinsic size
+              width={300}
               height={300}
               priority
               className={[
-                "w-[200px] md:w-[300px] h-auto shrink-0 transition-[filter] duration-300",
+                "w-[160px] sm:w-[200px] md:w-[300px] h-auto shrink-0 transition-[filter] duration-300",
                 scrolled ? "" : "invert brightness-0",
               ].join(" ")}
             />
           </Link>
 
+
           {/* Right-side CTA */}
           <Link
-            href="#contact"
+            href="/contact"
             className={[
               "inline-flex items-center rounded-lg px-4 py-2 text-sm font-semibold transition-colors duration-300",
               scrolled

@@ -1,11 +1,10 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/HeroSlider";
-import SolutionFeatures from "@/components/Solutions/SolutionBenefits";
-import Footer from "@/components/Footer";
-import Section from "@/components/VFX/Section";
-import HeroCTA from "@/components/HeroCTA";
-import CurveDivider from "@/components/VFX/CurveDevider";
-
+import Navbar from "../components/Navbar";
+import Hero from "../components/HeroSlider";
+import SolutionFeatures from "../components/Solutions/SolutionBenefits";
+import Footer from "../components/Footer";
+import Section from "../components/VFX/Section";
+import HeroCTA from "../components/HeroCTA";
+import CurveDivider from "../components/VFX/CurveDevider";
 
 export default function Home() {
   return (
