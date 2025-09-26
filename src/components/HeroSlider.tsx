@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react"; 
 
 type Slide = {
   img: string;
@@ -33,29 +33,29 @@ export default function HeroSlider() {
   const [index, setIndex] = useState(0);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const count = slides.length;
-  const segment = 100 / count;               // 33.3333%
-  const leftPct = index * segment;           // 0, 33.33, 66.66
+  const segment = 100 / count;
+  const leftPct = index * segment;
 
-  // autoplay (pause on hover/focus)
-  useEffect(() => {
+  const stop = useCallback(() => {
+    if (timer.current) {
+      clearTimeout(timer.current);
+      timer.current = null;
+    }
+  }, []);
+
+  const start = useCallback(() => {
     if (!AUTOPLAY_MS) return;
-    start();
-    return () => stop(); // cleanup must return void
-  }, [index]);
-
-  const start = () => {
     stop(); // clear any existing timer
     timer.current = setTimeout(() => {
       setIndex((i) => (i + 1) % count);
     }, AUTOPLAY_MS);
-  };
+  }, [count, stop]);
 
-  const stop = () => {
-    if (timer.current) {
-      clearTimeout(timer.current);
-      timer.current = null; // reset ref
-    }
-  };
+  useEffect(() => {
+    start();
+    return stop; // cleanup
+  }, [start, stop, index]); // restart timer when slide changes
+
 
   return (
     <section
@@ -81,9 +81,10 @@ export default function HeroSlider() {
             >
               <Image
                 src={s.img}
-                alt=""
+                alt={`${s.title} — product visual`}
                 fill
-                priority={i === 0}
+                sizes="100vw"
+                priority={i === index}   // ✅ use the existing state 'index'
                 className="object-cover object-center -z-10"
               />
               <div className="absolute inset-0 -z-10 bg-black/50" />

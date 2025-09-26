@@ -7,14 +7,12 @@ type Props = {
   title: string;
   subtitle?: string;
   primary?: Btn;
-  secondary?: Btn;
 };
 
 export default function HeroCTA({
   title = "Provide High-Quality Services To Global Users",
   subtitle = "Contact our sales team to learn more about which charging solution best fits your needs.",
   primary = { label: "Get In Touch", href: "#contact" },
-  secondary = { label: "Sign up", href: "#signup" },
 }: Props) {
   return (
     <section className="relative isolate overflow-hidden bg-[#0b1633] text-white">

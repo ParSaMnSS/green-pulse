@@ -14,13 +14,12 @@ export default function Home() {
         <Hero />
       </Section>
       <SolutionFeatures />
-      <CurveDivider fill="rgba(255,255,255,0.15)"/>
+      <CurveDivider fill="rgba(255,255,255,0.15)" />
       <Section fadeTo="#111827" className="bg-transparent">
         <HeroCTA
           title="Innovative and Reliable EV Charging Solution"
           subtitle=""
           primary={{ label: "Contact us", href: "/contact" }}
-          secondary={{ label: "Sign up", href: "/signup" }}
         />
       </Section>
       <Footer />
