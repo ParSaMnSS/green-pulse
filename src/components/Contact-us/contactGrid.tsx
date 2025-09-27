@@ -6,7 +6,7 @@ export default function ContactGrid() {
     <div className="rounded-2xl border border-gray-200 bg-white/80 shadow-sm backdrop-blur">
       <div className="px-8 pb-10 pt-12 sm:px-12">
         <h1 className="text-center text-3xl font-bold tracking-tight text-gray-900">
-          Contact Us US US US US 
+          Contact Us 
         </h1>
         <p className="mx-auto mt-3 max-w-xl text-center text-gray-600">
           We’d love to hear from you. Reach us via the details below.
