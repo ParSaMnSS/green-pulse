@@ -1,6 +1,7 @@
 import Image from "next/image";
 import AnimatedUnderlineLink from "./bits/AnimatedUnderlineLink";
-import { Link } from "lucide-react";
+import Link from "next/link";
+
 
 export default function Footer() {
   return (
@@ -35,7 +36,12 @@ export default function Footer() {
 
           {/* Products */}
           <div>
-            <h3 className="text-sm font-semibold text-white">Products</h3>
+            <Link
+              href="/products"
+              className="text-sm font-semibold text-white"
+            >
+              Products
+            </Link>
             {/* <ul className="mt-4 space-y-2 text-sm">
               <li>
                 <AnimatedUnderlineLink href="/#compact">
@@ -62,7 +68,12 @@ export default function Footer() {
 
           {/* Solutions */}
           <div>
-            <Link className="text-sm font-semibold text-white">Contact us</Link>
+            <Link
+              href="/contact"
+              className="text-sm font-semibold text-white"
+            >
+              Contact Us
+            </Link>
             {/* <ul className="mt-4 space-y-2 text-sm">
               <li>
                 <AnimatedUnderlineLink href="/#v2h">
