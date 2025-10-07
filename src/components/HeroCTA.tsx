@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import ShimmerButton from "./bits/NeoGloss";
 
 type Btn = { label: string; href: string };
 type Props = {
@@ -12,10 +12,10 @@ type Props = {
 export default function HeroCTA({
   title = "Provide High-Quality Services To Global Users",
   subtitle = "Contact our sales team to learn more about which charging solution best fits your needs.",
-  primary = { label: "Get In Touch", href: "#contact" },
+  primary = { label: "Get In Touch", href: "/contact" },
 }: Props) {
   return (
-    <section className="relative isolate overflow-hidden bg-[#0b1633] text-white">
+    <section className="relative isolate overflow-hidden bg-[#123e23] text-white">
       {/* height & center */}
       <div className="min-h-[100svh] flex items-center">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
@@ -28,13 +28,9 @@ export default function HeroCTA({
 
           <div className="mt-10 flex items-center justify-center gap-4">
             {primary && (
-              <Link
-                href={primary.href}
-                className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0b1633] shadow ring-1 ring-black/5 hover:bg-gray-100 transition"
-              >
-                {primary.label}
-                <Arrow />
-              </Link>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <ShimmerButton href={primary.href}>{primary.label}</ShimmerButton>
+              </div>
             )}
           </div>
         </div>
@@ -67,10 +63,3 @@ export default function HeroCTA({
   );
 }
 
-function Arrow() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-      <path d="M12.293 4.293a1 1 0 011.414 0l4 4a.997.997 0 010 1.414l-4 4a1 1 0 11-1.414-1.414L14.586 10H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"/>
-    </svg>
-  );
-}

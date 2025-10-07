@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState, useCallback } from "react"; 
+import { useEffect, useRef, useState, useCallback } from "react";
 
 type Slide = {
   img: string;
@@ -57,14 +57,14 @@ export default function HeroSlider() {
   }, [start, stop, index]); // restart timer when slide changes
 
 
+
   return (
     <section
-      id="hero"
-      className="relative isolate overflow-hidden text-white"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Featured solutions"
       onMouseEnter={stop}
       onMouseLeave={start}
-      onFocus={stop}
-      onBlur={start}
     >
       {/* Slides (tall + bottom padding so selector/fade don’t overlap buttons) */}
       <div className="relative min-h-[105svh]">

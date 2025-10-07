@@ -12,7 +12,7 @@ export default function ContactItem({
 }) {
   return (
     <article
-      className="group relative rounded-xl border border-white/10 bg-white/[0.04] p-6 shadow-2xl backdrop-blur-sm transition
+      className="group relative h-full rounded-xl border border-white/10 bg-white/[0.04] p-6 shadow-2xl backdrop-blur-sm transition
                  hover:bg-white/[0.06] hover:border-white/15"
     >
       {/* Icon with soft gradient ring */}

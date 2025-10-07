@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Aurora({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative isolate overflow-hidden bg-[#050a17]">
+    <div className="relative isolate overflow-hidden bg-[#2fb84a]">
       {/* Aurora layers */}
       <motion.div
         aria-hidden="true"

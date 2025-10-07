@@ -3,10 +3,8 @@ import type { Metadata } from "next";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ContactGrid from "../../components/Contact-us/contactGrid";
-// import Backdrop from "../../components/VFX/Backdrop";
 import Section from "../../components/VFX/Section";
 import GradientBorderCard from "../../components/bits/GradientBorderCard";
-import Aurora from "../../components/VFX/Aurora";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -15,11 +13,10 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="flex min-h-screen flex-col overflow-x-hidden bg-[#050a17]">
+    <div className="flex min-h-screen flex-col overflow-x-hidden bg-emerald-800">
       <Navbar />
 
-      <Section fadeTo="#111827" className="bg-transparent">
-        <Aurora>
+      <Section  className="bg-transparent">
           {/* Header copy */}
           <header className="mx-auto w-full max-w-5xl px-4 pt-28 text-center sm:pt-36">
             <h1 className="text-4xl font-extrabold tracking-tight text-white md:text-5xl">
@@ -36,7 +33,6 @@ export default function ContactPage() {
               <ContactGrid />
             </GradientBorderCard>
           </main>
-        </Aurora>
       </Section>
 
       <Footer />

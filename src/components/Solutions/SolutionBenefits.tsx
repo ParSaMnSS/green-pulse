@@ -41,7 +41,7 @@ const container = {
 
 export default function SolutionBenefits() {
   return (
-    <section id="benefits" className="bg-[#071733] py-16 md:pt-24 md:pb-40">
+    <section id="benefits" className="bg-[#123e23] py-16 md:pt-24 md:pb-40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center">
           Solution Benefits

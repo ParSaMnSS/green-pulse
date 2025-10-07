@@ -25,6 +25,17 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+:root {
+  /* tweak these 4 to match the PDF exactly */
+  --gp-green: #1e8e3e;      /* primary accent (buttons, underlines, highlights) */
+  --gp-green-hover: #176f31;/* hover/darker */
+  --gp-ink: #0b0b0b;        /* headings on light */
+  --gp-muted: #6b7280;      /* body text (neutral-600 vibe) */
+  --gp-surface: #ffffff;    /* cards / surfaces */
+  --gp-surface-alt: #f6f7f8;/* light section background */
+  --gp-border: #e5e7eb;     /* subtle borders */
+}
+
 /* Contact page animations */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(12px); }
