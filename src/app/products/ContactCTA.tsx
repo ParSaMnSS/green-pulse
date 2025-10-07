@@ -23,7 +23,7 @@ export default function ContactCTA() {
             className="py-16 sm:py-20 lg:py-24 bg-[var(--gp-white)]"
         >
             <Container>
-                <div className="rounded-3xl bg-[var(--gp-green)] text-white shadow-2xl ring-1 ring-white/10 p-8 sm:p-10 lg:p-12">
+                <div className="rounded-3xl bg-[#457b3b] text-white shadow-2xl ring-1 ring-white/10 p-8 sm:p-10 lg:p-12">
                     <div className="grid items-center gap-8 lg:grid-cols-2">
                         <div>
                             <Reveal y={-6}>

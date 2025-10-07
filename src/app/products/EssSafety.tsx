@@ -28,7 +28,7 @@ export default function EssSafety() {
             id="ess-safety"
             aria-labelledby="ess-safety-title"
             style={vars}
-            className="relative bg-[#2fb84a] py-20 sm:py-28 lg:py-32 min-h-[35vh] scroll-mt-24"
+            className="relative bg-[#457b3b] py-20 sm:py-28 lg:py-32 min-h-[35vh] scroll-mt-24"
         >
             <Container>
                 <header className="max-w-2xl">
