@@ -52,7 +52,7 @@ export default function EssSafety() {
                     role="list"
                     className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-stretch"
                 >
-                    <RevealGroup baseDelay={160} step={90}>
+                    <RevealGroup baseDelay={50} step={55}>
                         {DEFAULT_ITEMS.map((it) => (
                             <Reveal key={it.title} y={12}>
                                 <li className="group flex flex-col justify-between h-full rounded-2xl border border-[var(--gp-lime)]/50 bg-white p-6 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-0.5 hover:shadow-md">

@@ -35,13 +35,13 @@ export default function EssCard() {
                 289kWh Cabinet ESS:
               </h1>
             </Reveal>
-            <Reveal y={-4} delay={80}>
+            <Reveal y={-4} delay={40}>
               <h2 className="mt-1 text-2xl md:text-5xl font-semibold tracking-tight text-[var(--gp-ink,black)]">
                 Power Meets Precision
               </h2>
             </Reveal>
 
-            <Reveal y={8} delay={140}>
+            <Reveal y={8} delay={70}>
               <p className="mt-4 text-black/80">
                 The GPE 289 Cabinet ESS features high-density 314 Ah LFP cells in an all-in-one
                 design. Engineered for maximum energy integration across commercial, industrial,
@@ -50,7 +50,7 @@ export default function EssCard() {
             </Reveal>
 
             <dl className="mt-8 grid gap-6 sm:grid-cols-3">
-              <RevealGroup baseDelay={160} step={90}>
+              <RevealGroup baseDelay={50} step={55}>
                 {FEATURES.map((f) => (
                   <Reveal key={f.label} y={10}>
                     <div>

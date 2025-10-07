@@ -101,7 +101,7 @@ export default function ChargerCard() {
                             </div>
 
                             <ul role="list" className="mt-8 grid gap-4">
-                                <RevealGroup baseDelay={120} step={100}>
+                                <RevealGroup baseDelay={50} step={55}>
                                     {FEATURES.map((f) => (
                                         <Reveal key={f.label} y={12}>
                                             <li className="flex items-start gap-4 rounded-xl border border-white/15 bg-white/5 p-5 ring-1 ring-white/5 backdrop-blur-[1px]">
