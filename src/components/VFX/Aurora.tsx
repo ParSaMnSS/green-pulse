@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 
 export default function Aurora({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative isolate overflow-hidden bg-[#2fb84a]">
+    <div className="transform-gpu will-change-transform relative isolate overflow-hidden bg-[#2fb84a]">
       {/* Aurora layers */}
       <motion.div
         aria-hidden="true"
         className="absolute inset-0"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.5 }}
+        transition={{ duration: 0.6 }}
       >
         <div className="absolute -top-40 left-1/2 h-[60rem] w-[60rem] -translate-x-1/2 rounded-full bg-gradient-to-r from-emerald-500/30 to-cyan-500/20 blur-3xl animate-pulse" />
         <div className="absolute top-1/3 left-[20%] h-[40rem] w-[40rem] rounded-full bg-gradient-to-r from-cyan-400/20 to-indigo-500/20 blur-2xl animate-[aurora_20s_ease-in-out_infinite]" />

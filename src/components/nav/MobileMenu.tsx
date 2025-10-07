@@ -120,18 +120,30 @@ export default function MobileMenu({ scrolled }: Props) {
                             </motion.nav>
 
                             {/* subtle blobs */}
-                            <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-                                <motion.div
-                                    className="absolute -right-10 top-24 h-28 w-28 rounded-full bg-green-500/20 blur-2xl"
-                                    animate={{ y: [0, -14, 0] }}
-                                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                                />
-                                <motion.div
-                                    className="absolute right-8 bottom-16 h-24 w-24 rounded-full bg-emerald-400/20 blur-2xl"
-                                    animate={{ y: [0, 12, 0] }}
-                                    transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                                />
-                            </div>
+                            {open && (
+                                <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden transform-gpu will-change-transform">
+                                    <motion.div
+                                        className="absolute -right-10 top-24 h-28 w-28 rounded-full bg-green-500/20 blur-2xl"
+                                        animate={{ y: [0, -10, 0] }}
+                                        transition={{
+                                            duration: 2.2,
+                                            repeat: Infinity,
+                                            repeatType: "mirror",
+                                            ease: "easeInOut",
+                                        }}
+                                    />
+                                    <motion.div
+                                        className="absolute right-8 bottom-16 h-24 w-24 rounded-full bg-emerald-400/20 blur-2xl"
+                                        animate={{ y: [0, 10, 0] }}
+                                        transition={{
+                                            duration: 2.5,
+                                            repeat: Infinity,
+                                            repeatType: "mirror",
+                                            ease: "easeInOut",
+                                        }}
+                                    />
+                                </div>
+                            )}
                         </motion.aside>
                     </>
                 )}
