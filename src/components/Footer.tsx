@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import AnimatedUnderlineLink from "./bits/AnimatedUnderlineLink";
 import Link from "next/link";
 
@@ -16,7 +16,7 @@ export default function Footer() {
       <div className="relative z-10 mx-auto max-w-[1440px] px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5">
           {/* Logo */}
-          <div>
+          {/* <div>
             <AnimatedUnderlineLink
               href="/"
               className="flex items-center space-x-3"
@@ -27,12 +27,12 @@ export default function Footer() {
                 width={300}
                 height={300}
               />
-              {/* <span className="text-xl font-bold text-white">Green Pulse</span> */}
+              <span className="text-xl font-bold text-white">Green Pulse</span>
             </AnimatedUnderlineLink>
             <p className="mt-3 text-sm text-gray-400 italic">
               Innovation for Your Power
             </p>
-          </div>
+          </div> */}
 
           {/* Products */}
           <div>
