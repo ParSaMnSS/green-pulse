@@ -92,7 +92,7 @@ export default function HeroSlider() {
               <div className="relative h-full flex items-center justify-end back">
                 <div className="mx-auto w-full max-w-6xl px-4 text-left pb-28">
                   <div className="max-w-3xl backdrop-blur-sm px-10 py-6 rounded-2xl shadow-2xl"> {/* common wrapper for alignment */}
-                    <h1 className="whitespace-pre-line text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
+                    <h1 className="whitespace-pre-line text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
                       {s.title}
                     </h1>
                     {s.subtitle && (
