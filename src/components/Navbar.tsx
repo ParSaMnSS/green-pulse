@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import MobileMenu from "./nav/MobileMenu";
 
 import { useI18n } from "@/i18n/client";
-import LanguageSelector from "./nav/LanguageSelector";
+import DesktopLanguageSelector from "./nav/DesktopLanguageSelector";
 
 export default function Navbar() {
   const i18n = useI18n();
@@ -73,7 +73,7 @@ export default function Navbar() {
               <span className="absolute left-0 -bottom-1 h-[3px] w-0 bg-green-600 transition-all duration-300 group-hover:w-full" />
             </Link>
 
-            <LanguageSelector scrolled={scrolled} />
+            <DesktopLanguageSelector scrolled={scrolled} />
           </div>
 
           {/* Mobile hamburger (only on < md) */}
