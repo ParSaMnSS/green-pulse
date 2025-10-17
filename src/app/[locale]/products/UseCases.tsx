@@ -2,7 +2,10 @@
 "use client";
 import Container from "../../../components/bits/Container";
 import Image from "next/image";
-import { Reveal, RevealGroup } from "../../../components/motion/Reveal";
+import dynamic from "next/dynamic";
+
+const Reveal = dynamic(() => import("../../../components/motion/Reveal").then(mod => mod.Reveal));
+const RevealGroup = dynamic(() => import("../../../components/motion/Reveal").then(mod => mod.RevealGroup));
 import type { GPVars } from "../../../types/css";
 
 

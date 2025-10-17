@@ -3,7 +3,10 @@
 import Container from "../../../components/bits/Container";
 import Image from "next/image";
 import Link from "next/link";
-import { Reveal, RevealGroup } from "../../../components/motion/Reveal";
+import dynamic from "next/dynamic";
+
+const Reveal = dynamic(() => import("../../../components/motion/Reveal").then(mod => mod.Reveal));
+const RevealGroup = dynamic(() => import("../../../components/motion/Reveal").then(mod => mod.RevealGroup));
 import type { GPVars } from "../../../types/css";
 import { useI18n } from "../../../i18n/client";
 
@@ -74,7 +77,6 @@ export default function ChargerCard() {
                                     fill
                                     className="object-contain"
                                     sizes="(min-width: 1024px) 50vw, 100vw"
-                                    priority
                                     placeholder="empty"
                                 />
                             </div>
