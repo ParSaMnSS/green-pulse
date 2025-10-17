@@ -5,6 +5,8 @@ import { useState, useEffect, useMemo } from "react";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { Squash as Hamburger } from "hamburger-react";
+import { useI18n } from "@/i18n/client";
+import LanguageSelector from "./LanguageSelector";
 
 const overlayVariants: Variants = {
     hidden: { opacity: 0 },
@@ -20,6 +22,7 @@ const panelVariants: Variants = {
 
 export default function MobileMenu({ scrolled }: { scrolled: boolean }) {
     const [open, setOpen] = useState(false);
+    const i18n = useI18n();
 
     // disable body scroll while open
     useEffect(() => {
@@ -33,11 +36,11 @@ export default function MobileMenu({ scrolled }: { scrolled: boolean }) {
 
     const links = useMemo(
         () => [
-            { href: "/", label: "Home" },
-            { href: "/products", label: "Products" },
-            { href: "/contact", label: "Contact" },
+            { href: "/", label: i18n("navbar.home", { count: 0 }) },
+            { href: "/products", label: i18n("navbar.products", { count: 0 }) },
+            { href: "/contact", label: i18n("navbar.contact", { count: 0 }) },
         ],
-        []
+        [i18n]
     );
 
     return (
@@ -118,6 +121,9 @@ export default function MobileMenu({ scrolled }: { scrolled: boolean }) {
                                 ))}
                             </motion.nav>
 
+                            <div className="absolute bottom-4 left-4 right-4">
+                                <LanguageSelector scrolled={scrolled} />
+                            </div>
                             {/* decorative blobs (lighter + short loop) */}
                             <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
                                 <motion.div

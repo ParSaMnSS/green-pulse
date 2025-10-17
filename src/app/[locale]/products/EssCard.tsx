@@ -1,10 +1,13 @@
 // File: app/products/EssCard.tsx
 "use client";
-import Container from "../../components/bits/Container";
+import Container from "../../../components/bits/Container";
 import Image from "next/image";
-import { Reveal, RevealGroup } from "../../components/motion/Reveal";
+import Link from "next/link";
+import { Reveal, RevealGroup } from "../../../components/motion/Reveal";
 
 type Feature = { label: string; value: string };
+import { useI18n } from "@/i18n/client";
+
 const FEATURES: Feature[] = [
   { label: "Rated Capacity", value: "High-density energy storage" },
   { label: "System Efficiency", value: "Maximum energy utilization" },
@@ -12,6 +15,8 @@ const FEATURES: Feature[] = [
 ];
 
 export default function EssCard() {
+  const i18n = useI18n();
+
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-[#eaf5ea] ">
       <Container>
@@ -32,20 +37,13 @@ export default function EssCard() {
           <div>
             <Reveal y={-6}>
               <h1 className="mt-1 text-2xl md:text-5xl font-semibold tracking-tight text-[var(--gp-ink,black)]">
-                289kWh Cabinet ESS:
+                {i18n("products.essCard.title", { count: 0 })}
               </h1>
-            </Reveal>
-            <Reveal y={-4} delay={40}>
-              <h2 className="mt-1 text-2xl md:text-5xl font-semibold tracking-tight text-[var(--gp-ink,black)]">
-                Power Meets Precision
-              </h2>
             </Reveal>
 
             <Reveal y={8} delay={70}>
               <p className="mt-4 text-black/80">
-                The GPE 289 Cabinet ESS features high-density 314 Ah LFP cells in an all-in-one
-                design. Engineered for maximum energy integration across commercial, industrial,
-                renewable, and EV charging applications.
+                {i18n("products.essCard.description", { count: 0 })}
               </p>
             </Reveal>
 
@@ -54,8 +52,8 @@ export default function EssCard() {
                 {FEATURES.map((f) => (
                   <Reveal key={f.label} y={10}>
                     <div>
-                      <dt className="text-sm text-black/80">{f.label}</dt>
-                      <dd className="text-base font-medium text-black/60">{f.value}</dd>
+                      <dt className="text-sm text-black/80">{i18n(f.label, { count: 0 })}</dt>
+                      <dd className="text-base font-medium text-black/60">{i18n(f.value, { count: 0 })}</dd>
                     </div>
                   </Reveal>
                 ))}
@@ -64,12 +62,12 @@ export default function EssCard() {
 
             <div className="mt-8 flex gap-3">
               <Reveal y={12} delay={160}>
-                <a
+                <Link
                   href="/contact"
                   className="rounded-2xl px-5 py-2.5 bg-[var(--gp-green,#2E7D32)] duration-300 text-white text-sm font-medium hover:bg-[var(--gp-green-light,#66BB6A)]"
                 >
-                  Contact Us
-                </a>
+                  {i18n("products.essCard.contactButton", { count: 0 })}
+                </Link>
               </Reveal>
             </div>
           </div>

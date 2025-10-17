@@ -1,9 +1,14 @@
 // import Image from "next/image";
+'use client';
+
 import AnimatedUnderlineLink from "./bits/AnimatedUnderlineLink";
 import Link from "next/link";
-
+import { useI18n } from "@/i18n/client";
 
 export default function Footer() {
+  const i18n = useI18n();
+  const year = new Date().getFullYear();
+
   return (
     <footer
       className="relative bg-[#123e23] text-gray-300 pt-12 pb-8
@@ -40,7 +45,7 @@ export default function Footer() {
               href="/products"
               className="text-sm font-semibold text-white"
             >
-              Products
+              {i18n("footer.products", { count: 0 })}
             </Link>
             {/* <ul className="mt-4 space-y-2 text-sm">
               <li>
@@ -72,7 +77,7 @@ export default function Footer() {
               href="/contact"
               className="text-sm font-semibold text-white"
             >
-              Contact Us
+              {i18n("footer.contact", { count: 0 })}
             </Link>
             {/* <ul className="mt-4 space-y-2 text-sm">
               <li>
@@ -142,15 +147,15 @@ export default function Footer() {
               href="/privacy"
               className="hover:text-emerald-300 transition-colors"
             >
-              Privacy Policy
+              {i18n("footer.privacy", { count: 0 })}
             </AnimatedUnderlineLink>
 
             <AnimatedUnderlineLink href="/sitemap.xml">
-              Sitemap
+              {i18n("footer.sitemap", { count: 0 })}
             </AnimatedUnderlineLink>
           </div>
           <p className="text-xs text-gray-400">
-            ©{new Date().getFullYear()} Green Pulse. All rights reserved.
+            {i18n("footer.copyright", { count: 0 })} {year}
           </p>
         </div>
       </div>

@@ -1,17 +1,13 @@
 // File: app/products/EssSafety.tsx
 "use client";
-import Container from "../../components/bits/Container";
-import { Reveal, RevealGroup } from "../../components/motion/Reveal";
-import type { GPVars } from "../../types/css";
+import Container from "../../../components/bits/Container";
+import { Reveal, RevealGroup } from "../../../components/motion/Reveal";
+import type { GPVars } from "../../../types/css";
 
 
 type SafetyItem = { title: string; desc: string };
-const DEFAULT_ITEMS: SafetyItem[] = [
-    { title: "Cell-level protection", desc: "Per-cell monitoring & thermal control." },
-    { title: "Pack-level safety", desc: "Electrical isolation & fault detection." },
-    { title: "System monitoring", desc: "Real-time diagnostics & early warning." },
-    { title: "Fire suppression", desc: "Aerosol system, explosion-relief design." },
-];
+import { useI18n } from "@/i18n/client";
+
 
 const vars: GPVars = {
     '--gp-green': '#2E7D32',
@@ -23,6 +19,15 @@ const vars: GPVars = {
 };
 
 export default function EssSafety() {
+    const i18n = useI18n();
+
+    const DEFAULT_ITEMS: SafetyItem[] = [
+        { title: i18n("products.essSafety.items.0.title", { count: 0 }), desc: i18n("products.essSafety.items.0.description", { count: 0 }) },
+        { title: i18n("products.essSafety.items.1.title", { count: 0 }), desc: i18n("products.essSafety.items.1.description", { count: 0 }) },
+        { title: i18n("products.essSafety.items.2.title", { count: 0 }), desc: i18n("products.essSafety.items.2.description", { count: 0 }) },
+        { title: i18n("products.essSafety.items.3.title", { count: 0 }), desc: i18n("products.essSafety.items.3.description", { count: 0 }) },
+    ];
+
     return (
         <section
             id="ess-safety"
@@ -37,25 +42,25 @@ export default function EssSafety() {
                             id="ess-safety-title"
                             className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white"
                         >
-                            Robust Safety Architecture
+                            {i18n("products.essSafety.title", { count: 0 })}
                         </h2>
                     </Reveal>
 
                     <Reveal y={8} delay={130}>
                         <p className="mt-3 max-w-prose text-white/70">
-                            Multi-layer protection from cell to system for safer operation in the field.
+                            {i18n("products.essSafety.description", { count: 0 })}
                         </p>
                     </Reveal>
                 </header>
 
                 <ul
                     role="list"
-                    className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-stretch"
+                    className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
                 >
                     <RevealGroup baseDelay={50} step={55}>
                         {DEFAULT_ITEMS.map((it) => (
                             <Reveal key={it.title} y={12}>
-                                <li className="group flex flex-col justify-between h-full rounded-2xl border border-[var(--gp-lime)]/50 bg-white p-6 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-0.5 hover:shadow-md">
+                                <li className="group flex flex-col h-36 rounded-2xl border border-[var(--gp-lime)]/50 bg-white p-6 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-0.5 hover:shadow-md">
                                     <div className="flex items-start gap-3">
                                         <span
                                             className="mt-0.5 inline-flex h-8 w-8 flex-none items-center justify-center rounded-full bg-[var(--gp-lime)]/30 ring-1 ring-[var(--gp-lime)]/70"

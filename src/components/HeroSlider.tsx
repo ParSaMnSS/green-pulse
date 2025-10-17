@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState, useCallback } from "react";
+import { useI18n } from "@/i18n/client";
 
 type Slide = {
   img: string;
@@ -9,27 +10,29 @@ type Slide = {
   subtitle?: string;
 };
 
-const slides: Slide[] = [
-  {
-    img: "/asset/compact.png",
-    title: "Compact Solution",
-    subtitle: "Ideal for commercial sites, dealerships, and urban infill locations, our compact ESS stations offer scalable energy storage and fast DC charging in a modular footprint—balancing performance, cost, and deployment speed.",
-  },
-  {
-    img: "/asset/portable.png",
-    title: "Portable Solution",
-    subtitle: "Built for mobile fleets, events, and remote areas, our portable ESS chargers provide flexible, off-grid DC-to-DC power wherever it’s needed—no grid connection required, just plug and charge.",
-  },
-  {
-    img: "/asset/large.png",
-    title: "High Scale Solution",
-    subtitle: "Designed for high-traffic urban zones and highway corridors, our large-scale ESS charging hubs deliver ultra-fast DC-to-DC charging with multi-megawatt storage, enabling grid-independent operation and peak-shaving for maximum efficiency and uptime.",
-  },
-];
-
 const AUTOPLAY_MS = 7000;
 
 export default function HeroSlider() {
+  const i18n = useI18n();
+
+  const slides: Slide[] = [
+    {
+      img: "/asset/compact.png",
+      title: i18n("heroSlider.slides.0.title", { count: 0 }),
+      subtitle: i18n("heroSlider.slides.0.subtitle", { count: 0 }),
+    },
+    {
+      img: "/asset/portable.png",
+      title: i18n("heroSlider.slides.1.title", { count: 0 }),
+      subtitle: i18n("heroSlider.slides.1.subtitle", { count: 0 }),
+    },
+    {
+      img: "/asset/large.png",
+      title: i18n("heroSlider.slides.2.title", { count: 0 }),
+      subtitle: i18n("heroSlider.slides.2.subtitle", { count: 0 }),
+    },
+  ];
+
   const [index, setIndex] = useState(0);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const count = slides.length;

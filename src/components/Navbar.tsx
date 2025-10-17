@@ -5,7 +5,11 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import MobileMenu from "./nav/MobileMenu";
 
+import { useI18n } from "@/i18n/client";
+import LanguageSelector from "./nav/LanguageSelector";
+
 export default function Navbar() {
+  const i18n = useI18n();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -50,7 +54,7 @@ export default function Navbar() {
                     : "text-white group-hover:text-green-400",
                 ].join(" ")}
               >
-                Products
+                {i18n("navbar.products", { count: 0 })}
               </span>
               <span className="absolute left-0 -bottom-1 h-[3px] w-0 bg-green-600 transition-all duration-300 group-hover:w-full" />
             </Link>
@@ -64,10 +68,12 @@ export default function Navbar() {
                     : "text-white group-hover:text-green-400",
                 ].join(" ")}
               >
-                Contact
+                {i18n("navbar.contact", { count: 0 })}
               </span>
               <span className="absolute left-0 -bottom-1 h-[3px] w-0 bg-green-600 transition-all duration-300 group-hover:w-full" />
             </Link>
+
+            <LanguageSelector scrolled={scrolled} />
           </div>
 
           {/* Mobile hamburger (only on < md) */}

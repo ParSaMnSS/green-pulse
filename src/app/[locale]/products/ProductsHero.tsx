@@ -1,10 +1,14 @@
 // File: app/products/ProductsHero.tsx
 "use client";
-import Container from "../../components/bits/Container";
+import Container from "../../../components/bits/Container";
 import Link from "next/link";
-import { Reveal } from "../../components/motion/Reveal";
+import { Reveal } from "../../../components/motion/Reveal";
+
+import { useI18n } from "@/i18n/client";
 
 export default function ProductsHero() {
+    const i18n = useI18n();
+
     return (
         <section
             id="products-hero"
@@ -19,14 +23,13 @@ export default function ProductsHero() {
                                 id="products-hero-title"
                                 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-white" 
                             >
-                                Green Pulse Energy Storage Solutions
+                                {i18n("products.hero.title", { count: 0 })}
                             </h1>
                         </Reveal>
 
                         <Reveal y={8} delay={100}>
                             <p className="mt-4 max-w-3xl text-base sm:text-lg text-neutral-200">
-                                Advanced battery systems and charging infrastructure for commercial, industrial,
-                                and renewable energy applications.
+                                {i18n("products.hero.description", { count: 0 })}
                             </p>
                         </Reveal>
 
@@ -38,7 +41,7 @@ export default function ProductsHero() {
                            hover:bg-[#5AAC60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70
                            focus-visible:ring-offset-2 focus-visible:ring-offset-[#123A2F]"
                             >
-                                Contact Us
+                                {i18n("products.hero.contactButton", { count: 0 })}
                             </Link>
                         </Reveal>
                     </header>

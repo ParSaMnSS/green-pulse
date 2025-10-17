@@ -1,10 +1,12 @@
 // File: app/products/ContactCTA.tsx
 "use client";
-import Container from "../../components/bits/Container";
+import Container from "../../../components/bits/Container";
 import Link from "next/link";
-import { Reveal } from "../../components/motion/Reveal";
-import type { GPVars } from "../../types/css";
+import { Reveal } from "../../../components/motion/Reveal";
+import type { GPVars } from "../../../types/css";
 
+
+import { useI18n } from "@/i18n/client";
 
 const vars: GPVars = {
     '--gp-green': '#2E7D32',
@@ -15,6 +17,9 @@ const vars: GPVars = {
 };
 
 export default function ContactCTA() {
+    const i18n = useI18n();
+    console.log(i18n("products.contactCTA.title", { count: 0 }));
+
     return (
         <section
             id="contact"
@@ -28,13 +33,12 @@ export default function ContactCTA() {
                         <div>
                             <Reveal y={-6}>
                                 <h3 id="contact-cta-title" className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight">
-                                    Power Your Sustainable Energy Future
+                                    {i18n("products.contactCTA.title", { count: 0 })}
                                 </h3>
                             </Reveal>
                             <Reveal y={8} delay={100}>
                                 <p className="mt-4 max-w-prose text-white/85">
-                                    Green Pulse energy solutions deliver the performance, safety, and reliability
-                                    needed for demanding energy storage and EV charging applications.
+                                    {i18n("products.contactCTA.description", { count: 0 })}
                                 </p>
                             </Reveal>
                         </div>
@@ -45,17 +49,10 @@ export default function ContactCTA() {
                                     href="/contact"
                                     className="inline-flex items-center justify-center rounded-2xl bg-white px-5 py-2.5 text-sm font-medium text-[var(--gp-green)] shadow-sm transition hover:bg-[var(--gp-green-light)] hover:text-[#0b3d0e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--gp-green)]"
                                 >
-                                    Contact Us
+                                    {i18n("products.contactCTA.contactButton", { count: 0 })}
                                 </Link>
                             </Reveal>
-                            <Reveal y={10} delay={220}>
-                                <a
-                                    href="mailto:info@example.com"
-                                    className="inline-flex items-center justify-center rounded-2xl border border-white/60 bg-transparent px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--gp-green)]"
-                                >
-                                    Email Specs
-                                </a>
-                            </Reveal>
+
                         </div>
                     </div>
                 </div>
