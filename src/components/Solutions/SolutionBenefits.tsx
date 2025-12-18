@@ -1,50 +1,54 @@
 "use client";
 import { motion } from "framer-motion";
 import BenefitsCard from "./BenefitsCard";
+import { useI18n } from "@/i18n/client";
 
-const features = [
-  {
-    icon: "/icons/grid.svg",
-    title: "Grid Independence",
-    desc: "Operate even in weak-grid or off-grid locations by storing energy locally and delivering high-power DC charging without relying on real-time grid supply.",
-  },
-  {
-    icon: "/icons/cost.svg",
-    title: "Peak-Shaving & Cost Optimization",
-    desc: "Charge ESS during off-peak hours and discharge during peak demand, reducing electricity costs and avoiding demand charges.",
-  },
-  {
-    icon: "/icons/deployment.svg",
-    title: "Rapid Deployment",
-    desc: "Modular, containerized ESS systems enable faster installation compared to traditional grid-tied fast chargers that require infrastructure upgrades.",
-  },
-  {
-    icon: "/icons/efficiency.svg",
-    title: "High-Power DC-to-DC Efficiency",
-    desc: "Direct DC-to-DC charging minimizes conversion losses, shortens charging times, and improves overall energy efficiency.",
-  },
-  {
-    icon: "/icons/scalability.svg",
-    title: "Scalability & Flexibility",
-    desc: "ESS platforms can be scaled from portable units to large hubs, adapting to urban, roadside, or fleet needs with minimal redesign.",
-  },
-  {
-    icon: "/icons/resilience.svg",
-    title: "Resilience & Reliability",
-    desc: "Stored energy ensures uptime during grid outages or fluctuations, enhancing service continuity and user trust.",
-  },
-];
 const container = {
   hidden: {},
   show: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } },
 };
 
 export default function SolutionBenefits() {
+  const i18n = useI18n();
+
+  const features = [
+    {
+      icon: "/icons/grid.svg",
+      title: i18n("solutionBenefits.features.0.title", { count: 0 }),
+      desc: i18n("solutionBenefits.features.0.desc", { count: 0 }),
+    },
+    {
+      icon: "/icons/cost.svg",
+      title: i18n("solutionBenefits.features.1.title", { count: 0 }),
+      desc: i18n("solutionBenefits.features.1.desc", { count: 0 }),
+    },
+    {
+      icon: "/icons/deployment.svg",
+      title: i18n("solutionBenefits.features.2.title", { count: 0 }),
+      desc: i18n("solutionBenefits.features.2.desc", { count: 0 }),
+    },
+    {
+      icon: "/icons/efficiency.svg",
+      title: i18n("solutionBenefits.features.3.title", { count: 0 }),
+      desc: i18n("solutionBenefits.features.3.desc", { count: 0 }),
+    },
+    {
+      icon: "/icons/scalability.svg",
+      title: i18n("solutionBenefits.features.4.title", { count: 0 }),
+      desc: i18n("solutionBenefits.features.4.desc", { count: 0 }),
+    },
+    {
+      icon: "/icons/resilience.svg",
+      title: i18n("solutionBenefits.features.5.title", { count: 0 }),
+      desc: i18n("solutionBenefits.features.5.desc", { count: 0 }),
+    },
+  ];
+
   return (
-    <section id="benefits" className="bg-[#071733] py-16 md:pt-24 md:pb-40">
+    <section id="benefits" className="bg-[#123e23] py-16 md:pt-24 md:pb-40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center">
-          Solution Benefits
+          {i18n("solutionBenefits.title", { count: 0 })}
         </h2>
 
         <motion.div
@@ -62,4 +66,3 @@ export default function SolutionBenefits() {
     </section>
   );
 }
-
